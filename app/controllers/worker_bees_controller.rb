@@ -1,0 +1,2 @@
+class WorkerBeesController < ApplicationController
+end

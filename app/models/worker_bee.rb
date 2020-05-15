@@ -1,0 +1,2 @@
+class WorkerBee < ApplicationRecord
+end
