@@ -1,5 +1,5 @@
 1. Develop the analysis model from the requirements specifications.
-	a. Classes, Roles and Responsibilities, Collaborators
+	a. Models, Views, Controllers, Roles and Responsibilities, Collaborators
 2. Prototype with JSChart to reduce risk of unfamiliar technology.
 3. Create sample test data in Excel
 4. Model the database entities based on the domain class model
