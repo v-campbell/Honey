@@ -1,0 +1,2 @@
+class Comb < ApplicationRecord
+end

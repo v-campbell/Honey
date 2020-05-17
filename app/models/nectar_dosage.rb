@@ -1,0 +1,2 @@
+class NectarDosage < ApplicationRecord
+end

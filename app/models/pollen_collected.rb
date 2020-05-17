@@ -1,0 +1,2 @@
+class PollenCollected < ApplicationRecord
+end
