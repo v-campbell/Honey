@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200518045106) do
+ActiveRecord::Schema.define(version: 20200518051445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,13 +39,12 @@ ActiveRecord::Schema.define(version: 20200518045106) do
     t.integer "sweet_spot"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "hive_id"
   end
 
   create_table "hives", force: :cascade do |t|
-    t.integer "comb_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["comb_id"], name: "index_hives_on_comb_id", unique: true
   end
 
   create_table "nectar_dosages", force: :cascade do |t|
@@ -68,8 +67,6 @@ ActiveRecord::Schema.define(version: 20200518045106) do
 
   create_table "worker_bees", force: :cascade do |t|
     t.integer "comb_id"
-    t.integer "pollen_collected"
-    t.integer "nectar_consumption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
