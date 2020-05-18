@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200516223108) do
+ActiveRecord::Schema.define(version: 20200518045106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20200516223108) do
     t.boolean "accepted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "comb_id"
   end
 
   create_table "assignments", force: :cascade do |t|
@@ -32,13 +33,6 @@ ActiveRecord::Schema.define(version: 20200516223108) do
     t.datetime "updated_at", null: false
     t.index ["bee_id"], name: "index_assignments_on_bee_id"
     t.index ["comb_id"], name: "index_assignments_on_comb_id"
-  end
-
-  create_table "bees", force: :cascade do |t|
-    t.integer "nectar_consumption"
-    t.integer "pollen_collected"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "combs", force: :cascade do |t|
@@ -70,6 +64,14 @@ ActiveRecord::Schema.define(version: 20200516223108) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bee_id"], name: "index_pollen_collecteds_on_bee_id"
+  end
+
+  create_table "worker_bees", force: :cascade do |t|
+    t.integer "comb_id"
+    t.integer "pollen_collected"
+    t.integer "nectar_consumption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

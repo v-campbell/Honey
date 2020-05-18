@@ -1,2 +1,0 @@
-class Bee < ApplicationRecord
-end
