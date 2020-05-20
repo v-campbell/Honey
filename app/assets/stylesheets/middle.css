@@ -15,7 +15,6 @@
     width: 70%;
     border-left: 1rem solid rgb(2, 32, 25);
     padding-left: 1rem;
-
 }
 
 .middle-right {
@@ -24,12 +23,16 @@
     width: 40%;
     font-weight: 450;
     color: rgb(6, 53, 53);
-    line-height: 1.7
+    line-height: 1.7;
 }
 
 .middle-right {
-    /* border-left: 1rem solid rgb(2, 32, 25);
-    padding-left: 1rem; */
+    border-left: 0.5rem solid rgb(2, 32, 25);
+    padding-left: 1rem;
+}
+
+.middle-right:first-child {
+    border-bottom: 0.5rem solid rgb(2, 32, 25);
 }
 
 .middle-right a span {
