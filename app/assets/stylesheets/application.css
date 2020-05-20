@@ -35,12 +35,12 @@ a:not(:last-child) {
   
 a::before {
     position: absolute;
-    top: 50%;
-    transform: translate(0,-50%);
+    top: 110%;
     left: 0;
+    transform: translate(0,-50%);
     content: "";
     display: block;
-    height: 10px;
+    height: 0.5rem;
     width: 0;
     background-color: rgb(55, 161, 147);
     opacity: .5;
@@ -48,5 +48,5 @@ a::before {
   }
   
 a:hover::before{
-      width: 100%
+      width: 15rem;
 }
