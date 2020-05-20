@@ -24,6 +24,8 @@
 .top h1{
     letter-spacing: 0.2rem;
     font-size: 5rem;
+     animation: text-fade-in 3s ease 0s forwards;
+    opacity: 0; 
 }
 
 .top h3 {
@@ -31,7 +33,7 @@
     color: whitesmoke;
     font-size: 2rem;
     border: 0.2rem solid whitesmoke;
-    animation: text-fade-in 2s ease 0s forwards;
+    animation: text-fade-in 2s ease 0.9s forwards;
     opacity: 0; 
 }
 
