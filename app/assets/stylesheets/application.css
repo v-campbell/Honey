@@ -16,18 +16,17 @@
 
  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 
- html {
+html {
     scroll-behavior: smooth;
- }
+}
 
 
 a {
     text-decoration: none;
     color: rgb(6, 53, 53);
-    position:relative;
-    list-style-type:none;
-    cursor:pointer;
-  
+    position: relative;
+    list-style-type: none;
+    cursor: pointer;
 }
 
 a:not(:last-child) {
@@ -38,16 +37,16 @@ a::before {
     position: absolute;
     top: 50%;
     transform: translate(0,-50%);
-    left:0;
+    left: 0;
     content: "";
     display: block;
     height: 10px;
     width: 0;
-    background-color: rgb(4, 61, 26);
+    background-color: rgb(55, 161, 147);
     opacity: .5;
     transition: all .2s cubic-bezier(1, 0, 0, 1);
   }
   
 a:hover::before{
-      width:100%
+      width: 100%
 }

@@ -13,12 +13,27 @@
 
 #middle h1 {
     width: 70%;
+    border-left: 1rem solid rgb(2, 32, 25);
+    padding-left: 1rem;
+
 }
 
-#middle-right {
-    display: flex;
-    flex-direction: column;
+.middle-right {
+    /* display: flex; */
+    /* flex-direction: column; */
     width: 40%;
-    font-weight: 600;
+    font-weight: 450;
     color: rgb(6, 53, 53);
+    line-height: 1.7
+}
+
+.middle-right {
+    /* border-left: 1rem solid rgb(2, 32, 25);
+    padding-left: 1rem; */
+}
+
+.middle-right a span {
+    color: rgb(100, 192, 192);
+    text-transform: uppercase;
+    font-size: 1.8rem;
 }

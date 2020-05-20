@@ -17,6 +17,8 @@
 }
 
 .top h3 {
+    padding: 1rem;
     color: whitesmoke;
     font-size: 2rem;
+    border: 0.2rem solid whitesmoke;
 }
