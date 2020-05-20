@@ -1,4 +1,8 @@
-
+.toggle-button-cover
+    .button
+        <input type="checkbox" class="checkbox">
+        .knobs
+        .layer
 
 <table class ='regular'>
     thead
@@ -8,6 +12,26 @@
             th Nectar
             th Advisement
             th Overrule
+    tbody 
+        - @p.each do |pee|
+            tr
+                td
+                    =pee['bee_id']
+                td
+                    =pee['date_collected']
+
+</ table>
+
+<table class ='enhanced'>
+    thead
+        tr
+            th ID
+            th ID-CombID
+            th Date
+            th PollenGlobs
+            th Nectar
+            th Advisement
+            th % Accepted
     tbody 
         - @p.each do |pee|
             tr
