@@ -1,0 +1,9 @@
+#graph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    margin: auto;
+}

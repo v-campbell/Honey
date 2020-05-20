@@ -5,9 +5,18 @@
     align-items: center;
     /* text-align: center; */
     width: 100%;
-    height: 30rem;
+    height: 40rem;
     background-color: rgb(20, 107, 107);
     color: white;
     font-family: 'Roboto', sans-serif;
+}
+
+.top h1{
+    letter-spacing: 0.2rem;
+    font-size: 6rem;
+}
+
+.top h3 {
+    color: whitesmoke;
     font-size: 2rem;
 }
