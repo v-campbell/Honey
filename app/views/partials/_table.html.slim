@@ -1,0 +1,19 @@
+
+
+<table class ='regular'>
+    thead
+        tr
+            th Date
+            th PollenGlobs
+            th Nectar
+            th Advisement
+            th Overrule
+    tbody 
+        - @p.each do |pee|
+            tr
+                td
+                    =pee['bee_id']
+                td
+                    =pee['date_collected']
+
+</ table>

@@ -10,6 +10,10 @@ WorkerBee.destroy_all
 Comb.destroy_all
 Advisement.destroy_all
 
-comb1 = Comb.create({})
+comb1 = Comb.create({sweet_spot: })
+
+
 bee1 = WorkerBee.create({comb_id: comb1.id})
+
+
 advisement1 = Advisement.create({comb_id: comb1.id})
