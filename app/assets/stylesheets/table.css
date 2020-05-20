@@ -4,11 +4,11 @@ table {
   width: 50%;
   table-layout: fixed;
   background: -webkit-linear-gradient(left, #fcee84, #e8b510);
-  background: linear-gradient(to right, #f1c842, #e8b510);
+  background: linear-gradient(to right,rgb(20, 107, 107), rgb(13, 97, 97), rgb(7, 82, 82));
   font-family: 'Roboto', sans-serif;
 }
 
-thead {
+thead tr th {
   background-color: rgba(255,255,255,0.3);
 }
  
