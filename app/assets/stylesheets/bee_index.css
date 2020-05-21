@@ -1,0 +1,26 @@
+.bee_index {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 10rem 3rem 10rem;
+}
+
+.bee_header {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: 1rem;
+    border-right: 1.2rem solid black;
+    color: rgb(82, 165, 150);
+}
+
+.bee_display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    color: rgb(63, 61, 61);
+}
