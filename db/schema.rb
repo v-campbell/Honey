@@ -10,29 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200518051445) do
+ActiveRecord::Schema.define(version: 20200520234012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "advisements", force: :cascade do |t|
-    t.date "from_date"
-    t.date "to_date"
     t.boolean "accepted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "comb_id"
-  end
-
-  create_table "assignments", force: :cascade do |t|
-    t.integer "bee_id"
-    t.integer "comb_id"
-    t.date "from_date"
-    t.date "to_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["bee_id"], name: "index_assignments_on_bee_id"
-    t.index ["comb_id"], name: "index_assignments_on_comb_id"
+    t.date "date_given"
   end
 
   create_table "combs", force: :cascade do |t|

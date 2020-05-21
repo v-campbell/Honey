@@ -5,15 +5,39 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
-WorkerBee.destroy_all
-Comb.destroy_all
 Advisement.destroy_all
+Comb.destroy_all
+Hive.destroy_all
+NectarDosage.destroy_all
+PollenCollected.destroy_all
+WorkerBee.destroy_all
 
-comb1 = Comb.create({sweet_spot: })
+comb1 = Comb.create({sweet_spot: 13})
+bees = []
+bees.push(WorkerBee.create({comb_id:comb1.id}))
+bees.push(WorkerBee.create({comb_id:comb1.id}))
+bees.push(WorkerBee.create({comb_id:comb1.id}))
+(0...50).each do |date|
+    counter = 0
+    bees.each do |bee|
+        fakeNectarDosage = 0
+        if Faker::Number.within(range: 1...14) != 1
+            fakeNectarDosage = Faker::Number.between(from: 2, to: 200)* 100
+        end
+        fakeDate = Faker::Date.between(from: (date*3).days.ago, to: (date*3+2).days.ago)
+        NectarDosage.create({comb_id: comb1.id, bee_id: bee.id, date_given: fakeDate,
+            nectar_dosage: fakeNectarDosage})
+        if counter % 2 == 1
+            PollenCollected.create({comb_id: comb1.id, bee_id: bee.id, date_collected: fakeDate,
+                pollen_globs_collected: Faker::Number.between(from: 5.0, to:17.9)})
+        end
+    end
 
+    if counter % 5 == 1
+        Advisement.create({comb_id: comb1.id, date:fakeDate})
+    end
+    counter += 1 
+end
 
-bee1 = WorkerBee.create({comb_id: comb1.id})
-
-
-advisement1 = Advisement.create({comb_id: comb1.id})

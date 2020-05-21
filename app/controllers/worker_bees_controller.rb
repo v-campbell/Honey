@@ -2,9 +2,11 @@ class WorkerBeesController < ApplicationController
     def index
         @worker_bee = WorkerBee.first
         @p = ActiveRecord::Base.connection.execute(
-            "SELECT * FROM pollen_collecteds
-            LEFT OUTER JOIN nectar_dosages ON 
-            pollen_collecteds.bee_id = nectar_dosages.bee_id").to_a
+            "SELECT a.nectar_dosage, b.pollen_globs_collected, date,
+            CASE WHEN a.bee_id is NULL THEN b.bee_id ELSE a.bee_id END AS bee_id,
+            CASE WHEN a.date_given is NULL THEN b.date_collected ELSE a.date_given END AS date
+            FROM nectar_dosages AS a JOIN pollen_collecteds AS b ON
+            a.date_given =b.date_collected WHERE bee_id = 1").to_a
         render :index
     end
 
