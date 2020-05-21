@@ -119,7 +119,7 @@ td {
     content: '-';
 }
 
-.toggle-button-cover .button input:checked ~ .enhanced {
+/* .toggle-button-cover .button input:checked ~ .enhanced {
     display: none;
 }   
 
@@ -132,7 +132,7 @@ td {
 
 .toggle-button-cover .button input ~ .enhanced {
     display: block;
-}
+} */
 
 .button .knobs:after {
     right: -28px;
