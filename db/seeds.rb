@@ -19,24 +19,24 @@ bees = []
 bees.push(WorkerBee.create({comb_id:comb1.id}))
 bees.push(WorkerBee.create({comb_id:comb1.id}))
 bees.push(WorkerBee.create({comb_id:comb1.id}))
+counter = 0
 (0...50).each do |date|
-    counter = 0
+    fakeDate = Faker::Date.between(from: (date*3).days.ago, to: (date*3+2).days.ago)
     bees.each do |bee|
         fakeNectarDosage = 0
         if Faker::Number.within(range: 1...14) != 1
             fakeNectarDosage = Faker::Number.between(from: 2, to: 200)* 100
         end
-        fakeDate = Faker::Date.between(from: (date*3).days.ago, to: (date*3+2).days.ago)
-        NectarDosage.create({comb_id: comb1.id, bee_id: bee.id, date_given: fakeDate,
+        NectarDosage.create({bee_id: bee.id, date_given: fakeDate,
             nectar_dosage: fakeNectarDosage})
         if counter % 2 == 1
-            PollenCollected.create({comb_id: comb1.id, bee_id: bee.id, date_collected: fakeDate,
+            PollenCollected.create({bee_id: bee.id, date_collected: fakeDate,
                 pollen_globs_collected: Faker::Number.between(from: 5.0, to:17.9)})
         end
     end
 
     if counter % 5 == 1
-        Advisement.create({comb_id: comb1.id, date:fakeDate})
+        Advisement.create({comb_id: comb1.id, date_given:fakeDate, value: Faker::Number.between(from: 2, to: 200)* 100})
     end
     counter += 1 
 end

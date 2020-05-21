@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'worker_bees/index'
-  root to: 'worker_bees#index'
+  get 'worker_bees/show'
+  root to: 'worker_bees#show'
 
   namespace :api, defaults: {format: :json} do
     resources :combs, only: [:show] do

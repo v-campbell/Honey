@@ -1,10 +1,10 @@
 .toggle-button-cover
     .button
-        <input type="checkbox" class="checkbox">
+        <input type="checkbox" onClick='myFunction()' class="checkbox">
         .knobs
         .layer
 
-<table class ='regular'>
+<table class ='regular' id = 'regular'>
     thead
         tr
             th Date
@@ -13,16 +13,20 @@
             th Advisement
             th Overrule
     tbody 
-        - @p.each do |pee|
+        - @bee_table.each do |row|
             tr
                 td
-                    =pee['bee_id']
+                    =row['date_given']
                 td
-                    =pee['date_collected']
+                    =row['pollen_globs_collected']
+                td
+                    =row['nectar_dosage']
+                td
+                    =row['value']
 
 </ table>
 
-<table class ='enhanced'>
+<table class ='enhanced' id ='enhanced'>
     thead
         tr
             th ID
@@ -33,11 +37,33 @@
             th Advisement
             th % Accepted
     tbody 
-        - @p.each do |pee|
+        - @bee_table.each do |row|
             tr
                 td
-                    =pee['bee_id']
+                    =row['bee_id']
                 td
-                    =pee['date_collected']
+                    =row['date_given']
+                td
+                    =row['nectar_dosage']
+                td
+                    =row['pollen_globs_collected']
+                td
+                    =row['value']
 
 </ table>
+
+javascript:
+    function myFunction() {
+    let enhancedView = document.getElementById("enhanced");
+    let regularView = document.getElementById("regular");
+    if (enhancedView.className === 'regular') {
+        enhancedView.className = "enhanced";
+    } else {
+        enhancedView.className = "regular";
+    }
+    if (regularView.className === 'regular') {
+        regularView.className = "enhanced";
+    } else {
+        regularView.className = "regular";
+    }
+    }

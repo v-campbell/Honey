@@ -1,27 +1,24 @@
 class WorkerBeesController < ApplicationController
     def index
         @worker_bee = WorkerBee.first
-        @p = ActiveRecord::Base.connection.execute(
-            "SELECT a.nectar_dosage, b.pollen_globs_collected, date,
-            CASE WHEN a.bee_id is NULL THEN b.bee_id ELSE a.bee_id END AS bee_id,
-            CASE WHEN a.date_given is NULL THEN b.date_collected ELSE a.date_given END AS date
-            FROM nectar_dosages AS a JOIN pollen_collecteds AS b ON
-            a.date_given =b.date_collected WHERE bee_id = 1").to_a
+        redirect_to 
         render :index
     end
 
     def show
 
-        @worker_bee = WorkerBee.find(params[:id])
-        @dates = []
-        @worker_bee.nectar_dosages.each do |nectar_dosage|
-            @dates.push(nectar_dosage.date_given)
-        end
-        @worker_bee.pollen_collecteds.each do |pollen_collected|
-            @dates.push(pollen_collected.date_collected)
-        end
-        print (@dates)
-        # @worker_bee.advisements.each do |
+        # @worker_bee = WorkerBee.find(params[:id])
+        @worker_bee = WorkerBee.first
+        @comb_id = @worker_bee.comb_id
+        @bee_table = ActiveRecord::Base.connection.execute(
+            "SELECT nec.bee_id, nec.date_given, nectar_dosage, pollen_globs_collected, value, adv.comb_id
+            FROM nectar_dosages AS nec
+            LEFT OUTER JOIN pollen_collecteds AS pol
+            ON nec.date_given = pol.date_collected
+            LEFT OUTER JOIN advisements AS adv ON
+            nec.date_given = adv.date_given
+            WHERE nec.bee_id = #{@worker_bee.id} AND (pol.bee_id = #{@worker_bee.id} OR pol.bee_id is NULL) AND
+            (adv.comb_id = #{@comb_id} OR adv.comb_id is NULL) ORDER BY nec.date_given DESC").to_a
 
         render :show
     end

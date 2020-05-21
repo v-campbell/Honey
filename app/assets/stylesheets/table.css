@@ -5,7 +5,7 @@
  }
  
  table {
-  width: 50%;
+  width: 80%;
   table-layout: fixed;
   background: -webkit-linear-gradient(left, rgb(38, 121, 121), rgb(20, 107, 107), rgb(13, 97, 97), rgb(11, 89, 89));
   background: linear-gradient(to right, rgb(38, 121, 121), rgb(20, 107, 107), rgb(13, 97, 97), rgb(11, 89, 89));
@@ -36,7 +36,7 @@ td {
 }
 
 .regular {
-    /* display: none; */
+    display: none;
 }
 
 .toggle-button-cover {
@@ -119,11 +119,19 @@ td {
     content: '-';
 }
 
-input:checked ~ .enhanced {
-    display: block;
-}    
-input:not(:checked) ~ .regular {
+.toggle-button-cover .button input:checked ~ .enhanced {
     display: none;
+}   
+
+.toggle-button-cover .button input:checked ~ .regular {
+    display: block;
+}
+.toggle-button-cover .button input ~ .regular {
+    display: none;
+}   
+
+.toggle-button-cover .button input ~ .enhanced {
+    display: block;
 }
 
 .button .knobs:after {
