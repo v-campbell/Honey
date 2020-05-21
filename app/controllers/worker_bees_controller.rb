@@ -11,14 +11,14 @@ class WorkerBeesController < ApplicationController
         @worker_bee = WorkerBee.first
         @comb_id = @worker_bee.comb_id
         @bee_table = ActiveRecord::Base.connection.execute(
-            "SELECT nec.bee_id, nec.date_given, nectar_dosage, pollen_globs_collected, value, adv.comb_id
+            "SELECT nec.bee_id, nec.date_given, nectar_dosage, pollen_globs_collected, value, adv.id AS adv_id
             FROM nectar_dosages AS nec
             LEFT OUTER JOIN pollen_collecteds AS pol
             ON nec.date_given = pol.date_collected
             LEFT OUTER JOIN advisements AS adv ON
             nec.date_given = adv.date_given
             WHERE nec.bee_id = #{@worker_bee.id} AND (pol.bee_id = #{@worker_bee.id} OR pol.bee_id is NULL) AND
-            (adv.comb_id = #{@comb_id} OR adv.comb_id is NULL) ORDER BY nec.date_given DESC").to_a
+            (adv.bee_id = #{@worker_bee.id} OR adv.bee_id is NULL) ORDER BY nec.date_given DESC").to_a
             
             @nectar_dosage = []
             @pollen_globs_collected = []

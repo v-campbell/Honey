@@ -11,12 +11,12 @@ class AdvisementsController < ApplicationController
 
     def update
         @advisement = Advisement.find(params[:id])
-        @advisement.update(bee_params)
+        @advisement.update(advisement_params)
         redirect_to :show
     end
 
     private
     def advisement_params
-        params.require(:advisement).permit(:bee_id, :comb_id, :from_date, :to_date)
+        params.require(:advisement).permit(:bee_id, :accepted, :date_given, :value)
     end
 end

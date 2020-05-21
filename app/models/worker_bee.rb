@@ -9,10 +9,7 @@ class WorkerBee < ApplicationRecord
     foreign_key: :bee_id,
     class_name: :NectarDosage
 
-    # has_many :assignments,
-    # foreign_key: :bee_id,
-    # class_name: :Assignment
-
     has_many :advisements,
-    through: :comb
+    foreign_key: :bee_id,
+    class_name: :Advisement
 end
