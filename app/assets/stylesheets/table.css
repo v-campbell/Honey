@@ -5,10 +5,10 @@
  }
  
  table {
-  width: 80%;
+  width: 60%;
   table-layout: fixed;
-  background: -webkit-linear-gradient(left, rgb(38, 121, 121), rgb(20, 107, 107), rgb(13, 97, 97), rgb(11, 89, 89));
-  background: linear-gradient(to right, rgb(38, 121, 121), rgb(20, 107, 107), rgb(13, 97, 97), rgb(11, 89, 89));
+  background: -webkit-linear-gradient(left, rgb(117, 207, 207), rgb(47, 160, 160), rgb(22, 165, 165), rgb(11, 112, 112));
+  background: linear-gradient(to right, rgb(117, 207, 207), rgb(47, 160, 160), rgb(22, 165, 165), rgb(11, 112, 112));
   font-family: 'Roboto', sans-serif;
 }
 
@@ -90,8 +90,7 @@ td {
     z-index: 1;
 }
 
-.button .knobs:before, .button .knobs:after
-{
+.button .knobs:before, .button .knobs:after {
     content: '+';
     position: absolute;
     top: 4px;
@@ -109,30 +108,13 @@ td {
     transition: 0.3s ease all;
 }
 
-.button .knobs:before
-{
+.button .knobs:before {
     content: '+';
 }
 
-.button .knobs:after
-{
+.button .knobs:after {
     content: '-';
 }
-
-/* .toggle-button-cover .button input:checked ~ .enhanced {
-    display: none;
-}   
-
-.toggle-button-cover .button input:checked ~ .regular {
-    display: block;
-}
-.toggle-button-cover .button input ~ .regular {
-    display: none;
-}   
-
-.toggle-button-cover .button input ~ .enhanced {
-    display: block;
-} */
 
 .button .knobs:after {
     right: -28px;

@@ -19,6 +19,24 @@ class WorkerBeesController < ApplicationController
             nec.date_given = adv.date_given
             WHERE nec.bee_id = #{@worker_bee.id} AND (pol.bee_id = #{@worker_bee.id} OR pol.bee_id is NULL) AND
             (adv.comb_id = #{@comb_id} OR adv.comb_id is NULL) ORDER BY nec.date_given DESC").to_a
+            
+            @nectar_dosage = []
+            @pollen_globs_collected = []
+            @dates = []
+            @bee_table.each do |row|
+                @nectar_dosage.push(row["nectar_dosage"]/1000)
+                @dates.push(row["date_given"])
+            end
+            @bee_table.each do |row|
+                if !row["pollen_globs_collected"]
+                    @pollen_globs_collected.push(@pollen_globs_collected.last() || 0) 
+                else
+                    @pollen_globs_collected.push(row["pollen_globs_collected"])
+                end
+            end
+            gon.nectar_dosage = @nectar_dosage
+            gon.pollen_globs_collected = @pollen_globs_collected
+            gon.dates = @dates
 
         render :show
     end
