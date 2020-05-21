@@ -1,4 +1,4 @@
-# Honey
+# Honey, a quick MVC rails app w/ graph
 ### Manage your colony with confidence
 
 * **Ruby** ('2.5.1')
