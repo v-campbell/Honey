@@ -1,6 +1,22 @@
-= render partial: 'partials/top'
-
-= render partial: 'partials/middle'
+.actions
+        a> href="#graph"
+            | View graphs for 
+            span
+                | Pollen Globs 
+            | collected and 
+            span
+                | Nectar 
+            | used
+        br
+        br
+        a> href="#table"
+            | Switch between 
+            span
+                | Enhanced 
+            | and 
+            span
+                | Regular 
+            | table modes
 
 #graph
   = render partial: 'partials/graph'

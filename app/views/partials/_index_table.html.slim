@@ -1,0 +1,12 @@
+<table class ='all_bees'>
+    thead
+        tr
+            th Bee
+    tbody 
+        - @worker_bees.each do |row|
+            tr
+                td
+                  a> href="/combs/#{row['comb_id']}/worker_bees/#{row['id']}"
+                    =row['id']
+
+</ table>

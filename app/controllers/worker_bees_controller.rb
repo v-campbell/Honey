@@ -1,12 +1,10 @@
 class WorkerBeesController < ApplicationController
     def index
-        @worker_bee = WorkerBee.first
-        redirect_to 
+        @worker_bees = WorkerBee.all
         render :index
     end
 
     def show
-
         # @worker_bee = WorkerBee.find(params[:id])
         @worker_bee = WorkerBee.first
         @comb_id = @worker_bee.comb_id

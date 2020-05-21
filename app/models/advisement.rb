@@ -3,7 +3,7 @@ class Advisement < ApplicationRecord
     foreign_key: :bee_id,
     class_name: :WorkerBee
 
-    def self.current_adv
+    def self.current_adv()
 
     end
 end
