@@ -1,7 +1,11 @@
 .bee_index
     .bee_header
         | BEES
-    .bee_display 
+    .bee_display
+        .comb
+            | COMB
+            =@worker_bees.first.comb_id
+
         - @worker_bees.each do |row|
                 div
                     a> href="/combs/#{row['comb_id']}/worker_bees/#{row['id']}"

@@ -6,7 +6,7 @@
     padding: 3rem 10rem 3rem 10rem;
 }
 
-.bee_header {
+.bee_header, .comb {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 5rem;
@@ -23,4 +23,11 @@
     font-family: 'Roboto', sans-serif;
     font-size: 3rem;
     color: rgb(63, 61, 61);
+}
+
+.comb {
+    font-size: 3rem;
+    border-right: none;
+    border-bottom: 0.9rem solid black;
+    margin-bottom: 3rem;
 }
