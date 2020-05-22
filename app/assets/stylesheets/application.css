@@ -15,6 +15,7 @@
  */
 
  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+ @import url(https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:300,400,500,600,700);
 
 html {
     scroll-behavior: smooth;
@@ -29,9 +30,9 @@ a {
     cursor: pointer;
 }
 
-a:not(:last-child) {
+/* a:not(:last-child) {
     margin-bottom:20px;
-}
+} */
   
 a::before {
     position: absolute;
@@ -48,5 +49,5 @@ a::before {
   }
   
 a:hover::before{
-      width: 15rem;
+      width: 100%;
 }
