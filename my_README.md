@@ -11,10 +11,10 @@
 ---
 
 ### The Product 🐝
-Managing your worker bees has never been easier. Track nectar doses and pollen collected with a simple, easy-to-read graph and toggle between a regular and enhanced table to view bee data.
+- Managing your worker bees has never been easier. Track nectar doses and pollen collected with a simple, easy-to-read graph and toggle between a regular and enhanced table to view bee data.
 
 ### The Database 🐝
-Normalized the database in 3NF with no transitive functional dependencies
+- Normalized the database in 3NF with no transitive functional dependencies
 
 ### The Graph 🐝
 - Implemented HighCharts to visualize nectar dosage and pollen collected data
@@ -25,15 +25,22 @@ Normalized the database in 3NF with no transitive functional dependencies
       <img src="app/assets/images/graph_highlight.gif">
   </p> 
 
+### The Table 🐝
+- Created a 'toggle-able' table to allow users to switch between Enhanced and Regular modes
+  <p align="center">
+      <img src="app/assets/images/table_toggle.gif">
+  </p>
+- Allow for Advisements to be Overruled (and Reaccepted) by a Cabeenet member via a custom button
+    <p align="center">
+        <img src="app/assets/images/overrule_button.gif">
+    </p>
+
 ### UI/UX Design 🐝
 - Designed various interactive elements for a more intuitive user experience
 <p align="center">
-      <img src="app/assets/images/graph_highlight.gif">
+      <img src="app/assets/images/hover_underline.gif">
 </p> 
 <p align="center">
       <img src="app/assets/images/nav_bar.gif">
-</p> 
-<p align="center">
-      <img src="app/assets/images/table_toggle.gif">
-</p> 
+</p>  
 
