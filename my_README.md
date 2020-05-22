@@ -6,6 +6,7 @@
 * **Ruby on Rails** ('~> 5.1.6.2') — with Turbolinks
 * **Postgres** ('~> 11.2')
 * **HighCharts JS**
+* **SQL**
 * **Faker**
 
 ---
@@ -98,6 +99,6 @@
         <img src="app/assets/images/accept_button.gif" width=200>
     </p>
 
-### Thank you for reading! Happy collecting! 🐝
+### Thank you for reading. Happy collecting! 🐝
 - Created by Victoria Campbell for Dosis Inc.
 
