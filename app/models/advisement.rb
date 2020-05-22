@@ -4,8 +4,7 @@ class Advisement < ApplicationRecord
     class_name: :WorkerBee
 
     def self.current_adv(date, bee_id)
-        Advisement.select("*").where("bee_id = #{bee_id}")
-        .order("date_given").last
+        Advisement.select("*").where("bee_id = #{bee_id}").where("date_given < ?", date).order("date_given").last
     end
 end
 

@@ -8,11 +8,9 @@ class NectarDosage < ApplicationRecord
         # debugger
         nec_acc = active_adv.value <= self.nectar_dosage ? [1] : [0]
         if active_adv.date_given == self.date_given && active_adv
-            advisementPercent = nec_acc
+            return nec_acc
         else
-            nec_acc = NectarDosage.select("*").where(date_given < self.date_given)
-            .order("date_given").last.getAdvisementPercent().concat(nec_acc)
+            return NectarDosage.select("*").where("date_given < ?", self.date_given).order("date_given").last.getAdvisementPercent().concat(nec_acc)
         end
-        return advisementPercent
     end
 end
