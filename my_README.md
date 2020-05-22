@@ -49,7 +49,25 @@
   </p> 
   <p align="center">
       <img src="app/assets/images/graph_highlight.gif">
-  </p> 
+  </p>
+- Added dataLabels and mouseTracking, and represented Nectar Dosages in 1000s for increased readability and easier visualization of the correlation between nectar and pollen
+    ```
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: true
+        }
+    },
+    series: [{
+        name: 'Nectar (in 1000s)',
+        data: gon.nectar_dosage
+    }, {
+        name: 'Pollen',
+        data: gon.pollen_globs_collected
+    }]
+    ```
 
 ### The Table 🐝
 - Displayed a 'toggle-able' table to allow users to switch between Enhanced and Regular modes
