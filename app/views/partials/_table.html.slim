@@ -25,9 +25,8 @@
                     =row['value']
                 td
                     - if row['value']
-                        
                         button onclick="editAdvisment(this)" name=row['adv_id'] class='edit-button'
-                            | Edit Advisement
+                            = row['accepted'] == nil || row['accepted'] == true ? 'overrule' : 'accept'
 
 
 </ table>
@@ -83,4 +82,9 @@ javascript:
         let xhttp = new XMLHttpRequest();
         xhttp.open("PATCH", `/advisements/overrule/${e.name}`, true);
         xhttp.send();
+        if (e.innerHTML === 'accept'){
+            e.innerHTML = 'overrule';
+        }else{
+            e.innerHTML = 'accept';
+        }
     }

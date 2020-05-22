@@ -13,7 +13,27 @@
 ### The Product 🐝
 Managing your worker bees has never been easier. Track nectar doses and pollen collected with a simple, easy-to-read graph and toggle between a regular and enhanced table to view bee data.
 
-### The Backend 🐝
-Normalized the database in 3NF with no transitive functional dependencies.
+### The Database 🐝
+Normalized the database in 3NF with no transitive functional dependencies
 
+### The Graph 🐝
+- Implemented HighCharts to visualize nectar dosage and pollen collected data
+  <p align="center">
+      <img src="app/assets/images/graph_grow.gif">
+  </p> 
+  <p align="center">
+      <img src="app/assets/images/graph_highlight.gif">
+  </p> 
+
+### UI/UX Design 🐝
+- Designed various interactive elements for a more intuitive user experience
+<p align="center">
+      <img src="app/assets/images/graph_highlight.gif">
+</p> 
+<p align="center">
+      <img src="app/assets/images/nav_bar.gif">
+</p> 
+<p align="center">
+      <img src="app/assets/images/table_toggle.gif">
+</p> 
 
