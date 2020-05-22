@@ -12,7 +12,9 @@
 
 ### The Product 🐝
 - Managing your worker bees has never been easier. Track nectar doses and pollen collected with a simple, easy-to-read graph and toggle between a regular and enhanced table to view bee data.
-
+    <p align="center">
+        <img src="app/assets/images/index_page.gif">
+    </p> 
 ### The Database 🐝
 - Normalized the database in 3NF with no transitive functional dependencies
 
