@@ -117,6 +117,6 @@
         <img src="app/assets/images/accept_button.gif" width=200>
     </p>
 
-### Thank you for reading. Happy collecting! 🐝
+### Thank you for reading, and Happbee tracking! 🐝
 - Created by Victoria Campbell for Dosis Inc.
 
