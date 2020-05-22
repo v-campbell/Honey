@@ -1,5 +1,5 @@
 # Honey, a quick MVC rails app w/ graph
-## Manage your colony with confidence
+## Manage your colony with confidence!
 
 ### Technologies Used
 * **Ruby** ('2.5.1')
@@ -106,7 +106,7 @@
     ```
 
 ### UI/UX Design 🐝
-- Designed various interactive elements for a more intuitive user experience
+- Designed various elements for a more intuitive, fun and interactive user experience
     <p align="center" >
         <img src="app/assets/images/hover_underline.gif" width=200>
     </p> 
