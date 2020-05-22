@@ -40,11 +40,11 @@
 ### UI/UX Design 🐝
 - Designed various interactive elements for a more intuitive user experience
 
-    <p align="center" width=100>
-        <img src="app/assets/images/hover_underline.gif">
+    <p align="center" >
+        <img src="app/assets/images/hover_underline.gif" width=100>
     </p> 
     <p align="center">
-        <img src="app/assets/images/nav_bar.gif">
+        <img src="app/assets/images/nav_bar.gif" width=100>
     </p>  
     <p align="center">
         <img src="app/assets/images/accept_button.gif">
