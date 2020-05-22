@@ -1,14 +1,25 @@
 .bee_show
   | BEE
-  =@worker_bee.id
+  span
+    =@worker_bee.id
   | -COMB
-  =@worker_bee.comb_id
+  span
+    =@worker_bee.comb_id
 
 #header
   = render partial: 'partials/header'
 
 #graph
   = render partial: 'partials/graph'
+
+.table-instruct
+  | *Toggle between 
+  span
+    | enhanced 
+  | and 
+  span
+    | regular 
+  | modes
 
 #table
   = render partial: 'partials/table'

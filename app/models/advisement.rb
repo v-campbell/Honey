@@ -4,7 +4,8 @@ class Advisement < ApplicationRecord
     foreign_key: :bee_id,
     class_name: :WorkerBee
     def self.current_adv(date, bee_id)
-        Advisement.select("*").where("bee_id = #{bee_id}").where("date_given <= ?", date).order("date_given").last
+        Advisement.select("*").where("bee_id = #{bee_id}").where("accepted != false")
+        .where("date_given <= ?", date).order("date_given").last
     end
 end
 

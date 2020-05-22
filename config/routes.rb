@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :worker_bees, only: [:index, :show, :update]
     resources :advisements, only: [:index, :show, :update]
   end
+  patch 'advisements/overrule/:id', to: 'advisements#overrule'
   # end  
   
 end

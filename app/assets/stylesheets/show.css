@@ -1,4 +1,4 @@
-.bee_show {
+.bee_show, .table-instruct {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 5rem;
@@ -11,13 +11,15 @@
     opacity: 0; 
 }
 
-/* @keyframes text-fade-in {
-  from {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-} */
+.bee_show span {
+    color: black;
+}
+
+.table-instruct {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+}
+
+.table-instruct span {
+    color: black;
+}

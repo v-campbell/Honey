@@ -14,6 +14,11 @@ class AdvisementsController < ApplicationController
         @advisement.update(advisement_params)
         redirect_to :show
     end
+    def overrule
+        @advisement = Advisement.find(params[:id])
+        @advisement.accepted = false
+        @advisement.save
+    end
 
     private
     def advisement_params
