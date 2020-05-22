@@ -16,7 +16,7 @@ class AdvisementsController < ApplicationController
     end
     def overrule
         @advisement = Advisement.find(params[:id])
-        @advisement.accepted = false
+        @advisement.accepted = true
         @advisement.save
     end
 

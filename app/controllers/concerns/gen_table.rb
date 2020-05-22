@@ -2,7 +2,7 @@ require 'active_support/concern'
 module GENTABLE
   extend ActiveSupport::Concern
     def genTable()
-        @worker_bee = WorkerBee.first
+        @worker_bee = WorkerBee.find(params[:id])
         @comb_id = @worker_bee.comb_id
         @bee_table = ActiveRecord::Base.connection.execute(
             "SELECT nec.bee_id, nec.date_given, nectar_dosage, pollen_globs_collected,

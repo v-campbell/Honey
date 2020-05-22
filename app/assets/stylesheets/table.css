@@ -149,16 +149,16 @@ td {
 }
 
 .edit-button{
-    height: 4rem;
+    height: 1.5rem;
     min-width: 5rem;
-    background: red;
+    background: whitesmoke;
     border: none;
     outline: none;
-    color: white;
+    color: rgb(65, 64, 64);
     font-size: 0.5rem;
     border-radius: 3px;
-    box-shadow: 0 5px 0px blue;
-    border-bottom: 2px solid green;
+    box-shadow: 0 5px 0px rgb(211, 211, 211);
+    border-bottom: 2px solid rgb(199, 197, 197);
 }
 .push-edit:hover{
     background: darken(red,5%);
