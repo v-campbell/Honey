@@ -37,7 +37,7 @@
             th Advisement
             th % Accepted
     tbody 
-        - @bee_table.each do |row|
+        - @bee_table.each_with_index do |row, i|
             tr
                 td
                     =row['bee_id']
@@ -51,6 +51,8 @@
                     =row['nectar_dosage']
                 td
                     =row['value']
+                td
+                    =@advisePerc[i]
                 
 
 </ table>
