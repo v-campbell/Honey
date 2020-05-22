@@ -9,7 +9,8 @@ class WorkerBeesController < ApplicationController
         @worker_bee = WorkerBee.first
         @comb_id = @worker_bee.comb_id
         @bee_table = ActiveRecord::Base.connection.execute(
-            "SELECT nec.bee_id, nec.date_given, nectar_dosage, pollen_globs_collected, value, adv.id AS adv_id
+            "SELECT nec.bee_id, nec.date_given, nectar_dosage, pollen_globs_collected,
+            value, adv.id AS adv_id, nec.id AS nec_id
             FROM nectar_dosages AS nec
             LEFT OUTER JOIN pollen_collecteds AS pol
             ON nec.date_given = pol.date_collected
@@ -19,10 +20,12 @@ class WorkerBeesController < ApplicationController
             (adv.bee_id = #{@worker_bee.id} OR adv.bee_id is NULL) ORDER BY nec.date_given DESC").to_a
             
             @nectar_dosage = []
+            @advisePerc = []
             @pollen_globs_collected = []
             @dates = []
             @bee_table.each do |row|
                 @nectar_dosage.push(row["nectar_dosage"]/1000)
+                @advisePerc.push(NectarDosage.find(row["nec_id"]).getAdvisementPercent())
                 @dates.push(row["date_given"])
             end
             @bee_table.each do |row|
@@ -35,7 +38,7 @@ class WorkerBeesController < ApplicationController
             gon.nectar_dosage = @nectar_dosage
             gon.pollen_globs_collected = @pollen_globs_collected
             gon.dates = @dates
-
+            debugger
         render :show
     end
 
