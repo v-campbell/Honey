@@ -26,7 +26,7 @@ class WorkerBeesController < ApplicationController
             @bee_table.each do |row|
                 @nectar_dosage.push(row["nectar_dosage"]/1000)
                 nec_dos = NectarDosage.find(row["nec_id"]).getAdvisementPercent()
-                @advisePerc.push(nec_dos.sum(0.0)/ nec_dos.size)
+                @advisePerc.push((nec_dos.sum(0.0)/ nec_dos.size).round(2))
                 @dates.push(row["date_given"])
             end
             @bee_table.each do |row|
@@ -39,7 +39,6 @@ class WorkerBeesController < ApplicationController
             gon.nectar_dosage = @nectar_dosage
             gon.pollen_globs_collected = @pollen_globs_collected
             gon.dates = @dates
-            debugger
         render :show
     end
 

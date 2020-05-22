@@ -34,7 +34,7 @@ counter = 0
                 pollen_globs_collected: Faker::Number.between(from: 5.0, to:17.9)})
         end
         if counter % 5 == 1
-            Advisement.create({bee_id: bee.id, date_given: fakeDate, value: Faker::Number.between(from: fakeNectarDosage - 2, to: fakeNectarDosage+ 2)* 100})
+            Advisement.create({bee_id: bee.id, date_given: fakeDate, value: Faker::Number.between(from: 2, to: 200)* 100})
         end
     end
 

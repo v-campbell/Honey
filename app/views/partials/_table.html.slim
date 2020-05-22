@@ -1,6 +1,6 @@
 .toggle-button-cover
     .button
-        <input type="checkbox" onClick='myFunction()' class="checkbox">
+        <input type="checkbox" onClick='toggleTable()' class="checkbox">
         .knobs
         .layer
 
@@ -23,6 +23,11 @@
                     =row['nectar_dosage']
                 td
                     =row['value']
+                td
+                    - if row['value']
+                        button onclick="editAdvisment(event)" name=row['adv_id']
+                            | Edit Advisement
+
 
 </ table>
 
@@ -58,17 +63,23 @@
 </ table>
 
 javascript:
-    function myFunction() {
-    let enhancedView = document.getElementById("enhanced");
-    let regularView = document.getElementById("regular");
-    if (enhancedView.className === 'regular') {
-        enhancedView.className = "enhanced";
-    } else {
-        enhancedView.className = "regular";
+    function toggleTable() {
+        let enhancedView = document.getElementById("enhanced");
+        let regularView = document.getElementById("regular");
+        if (enhancedView.className === 'regular') {
+            enhancedView.className = "enhanced";
+        } else {
+            enhancedView.className = "regular";
+        }
+        if (regularView.className === 'regular') {
+            regularView.className = "enhanced";
+        } else {
+            regularView.className = "regular";
+        }
     }
-    if (regularView.className === 'regular') {
-        regularView.className = "enhanced";
-    } else {
-        regularView.className = "regular";
-    }
+
+    function editAdvisment(e) {
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("PATCH", `combs/#{@comb_id}/advisements/${e.target.name}`, true);
+        xhttp.send();
     }
