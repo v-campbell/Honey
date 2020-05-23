@@ -160,11 +160,13 @@ td {
     box-shadow: 0 5px 0px rgb(211, 211, 211);
     border-bottom: 2px solid rgb(199, 197, 197);
 }
-.push-edit:hover{
-    background: darken(red,5%);
+
+.edit-button:hover{
+    /* background: darken(red,5%);
     box-shadow: 0 4px 1px darken(red,5%);
-    border-bottom: 2px solid darken(red,8%);
+    border-bottom: 2px solid darken(red,8%); */
     transition: all 0.1s ease-in;
+    cursor: pointer;
 }
   
 .edit-button:active{
