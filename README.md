@@ -1,4 +1,4 @@
-# Honey, a quick MVC rails app w/ graph
+# Honey, a MVC rails app with GraphQL
 ## Manage your colony with confidence!
 
 ### Technologies Used
@@ -118,5 +118,5 @@
     </p>
 
 ### Thank you for reading, and Happbee tracking! 🐝
-- Created by Victoria Campbell for Dosis Inc.
+- Created by Victoria Campbell
 
